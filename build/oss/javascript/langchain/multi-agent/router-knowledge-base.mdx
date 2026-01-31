@@ -256,7 +256,7 @@ Create an agent for each vertical. Each agent has domain-specific tools and a pr
 import { createAgent } from "langchain";
 import { ChatOpenAI } from "@langchain/openai";
 
-const llm = new ChatOpenAI({ model: "gpt-4o" });
+const llm = new ChatOpenAI({ model: "gpt-4.1" });
 
 const githubAgent = createAgent({
   model: llm,
@@ -305,7 +305,7 @@ Now build the router workflow using a StateGraph. The workflow has four main ste
 import { StateGraph, START, END, Send } from "@langchain/langgraph";
 import { z } from "zod";
 
-const routerLlm = new ChatOpenAI({ model: "gpt-4o-mini" });
+const routerLlm = new ChatOpenAI({ model: "gpt-4.1-mini" });
 
 
 // Define structured output schema for the classifier
@@ -673,7 +673,7 @@ const getThread = tool(
 import { createAgent } from "langchain";
 import { ChatOpenAI } from "@langchain/openai";
 
-const llm = new ChatOpenAI({ model: "gpt-4o" });
+const llm = new ChatOpenAI({ model: "gpt-4.1" });
 
 const githubAgent = createAgent({
   model: llm,
@@ -705,7 +705,7 @@ shared knowledge and solutions.
   `.trim(),
 });
 
-const routerLlm = new ChatOpenAI({ model: "gpt-4o-mini" });
+const routerLlm = new ChatOpenAI({ model: "gpt-4.1-mini" });
 
 // Define structured output schema for the classifier
 const ClassificationResultSchema = z.object({

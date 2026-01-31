@@ -48,7 +48,7 @@ import { z } from "zod";
 import { createAgent } from "langchain";
 import { StateGraph, START, END, MessagesZodState } from "@langchain/langgraph";
 
-const agent = createAgent({ model: "openai:gpt-4o", tools: [...] });
+const agent = createAgent({ model: "openai:gpt-4.1", tools: [...] });
 const State = MessagesZodState.extend({
   query: z.string(),
 });
@@ -144,11 +144,11 @@ const getLatestNews = tool(
 );
 
 const agent = createAgent({
-  model: "openai:gpt-4o",
+  model: "openai:gpt-4.1",
   tools: [getLatestNews],
 });
 
-const model = new ChatOpenAI({ model: "gpt-4o" });
+const model = new ChatOpenAI({ model: "gpt-4.1" });
 
 const RewrittenQuery = z.object({ query: z.string() });
 
